@@ -7,6 +7,7 @@ import {
   setCameraImage,
   resetCameraImage,
 } from "../features/cameraCapSlice";
+import "./WebCapture.css";
 
 const videoConstraints = {
   width: 250,
@@ -24,7 +25,7 @@ const WebCam = () => {
       const imageSrc = webcamRef.current.getScreenshot();
       dispatch(setCameraImage(imageSrc));
     }
-  }, [webcamRef]);
+  }, [webcamRef, dispatch]);
 
   return (
     <div className="webCapture">
